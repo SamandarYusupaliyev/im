@@ -21,6 +21,15 @@ function Login() {
 
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-r relative">
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+      >
+        <source src="/6015593_Chef_Man_1280x720.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <Form
         method="post"
         onSubmit={handleLogin}

@@ -6,7 +6,6 @@ import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice"; // Import the correct action
 import { useState } from "react";
-import videoLog from "../video/fruit-cut.mp4";
 
 function Register() {
   const dispatch = useDispatch();
@@ -25,13 +24,15 @@ function Register() {
 
   return (
     <div className="h-screen flex items-center justify-center  ">
-      <video
-        src={videoLog}
-        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 z-[-1] object-cover"
-        muted
+     <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
         loop
-      ></video>
+        muted
+      >
+        <source src="/freecompress-cooking-pastas-healthy-eating-food-food-pasta-pasta-9821-full.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <Form
         method="post"
         onSubmit={handleRegister}
