@@ -1,6 +1,8 @@
 import { FaSun,FaMoon } from "react-icons/fa6";
 import { useContext, useEffect, useState} from "react";
 import {GlobalContext} from "../context/useGlobalContext";
+import { TiShoppingCart } from "react-icons/ti"
+import { Link } from "react-router-dom";
 
 const colors =["#496989","#7469B6","#912BBC"]
 
@@ -51,6 +53,11 @@ function ThemeContainer() {
           </div>
         {/* theme */}
          <div>
+         <div className="dropdown dropdown-end">
+              <Link to='cart'><TiShoppingCart className="w-6 h-6"/></Link>
+             
+              
+            </div>
            <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input type="checkbox"
@@ -58,10 +65,11 @@ function ThemeContainer() {
               />
 
                 {/* sun icon */}
-                <FaSun  className="swap-on fill-current w-7 h-7 mt-2 mr-1" />
+                <FaSun  className="swap-on fill-current w-6 h-6 mt-2 mr-1" />
                {/* moon icon */}
-               <FaMoon className="swap-off fill-current w-7 h-7 mt-2 mr-1" />
+               <FaMoon className="swap-off fill-current w-6 h-6 mt-2 mr-1" />
             </label>
+           
          </div>
        </div>
     </div>

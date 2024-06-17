@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { CiHeart } from "react-icons/ci";
 import {IoTrashOutline} from "react-icons/io5"
-import { data } from "autoprefixer"
+import { data} from "autoprefixer";
 
 function RecipiesList({recipies}) {
   return <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
