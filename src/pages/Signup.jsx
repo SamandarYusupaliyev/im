@@ -33,7 +33,7 @@ function Signup() {
         <source src="/freecompress-cooking-pastas-healthy-eating-food-food-pasta-pasta-9821-full.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="max-w-96 w-full card  bg-base-100 shadow-xl pt-8 pb-8 pr-8 pl-8">
+      <div className="max-w-96 w-full card  p-8 shadow-lg rounded-lg flex flex-col gap-y-4 bg-gray-100/50 backdrop-blur-md relative z-10">
       <h4 className="text-center font-bold text-3xl text-gray-800">
           Register
         </h4>
