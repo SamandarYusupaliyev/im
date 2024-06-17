@@ -24,7 +24,19 @@ function Signup() {
   },[userSignup])
   return (
     <div className="min-h-screen grid place-items-center">
-      <div className="max-w-96 w-full">
+       <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+      >
+        <source src="/freecompress-cooking-pastas-healthy-eating-food-food-pasta-pasta-9821-full.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="max-w-96 w-full card  bg-base-100 shadow-xl pt-8 pb-8 pr-8 pl-8">
+      <h4 className="text-center font-bold text-3xl text-gray-800">
+          Register
+        </h4>
         <Form method="post">
           <FormInput type="text" label="Name:" name="Name" />
           <FormInput type="url" label="Photo Url:" name="Photo" />
