@@ -7,3 +7,14 @@
     @apply flex flex-col items-center  max-w-screen-2xl w-10/12 ml-auto mr-auto;
   }
 }
+*{
+  list-style: none;
+}
+
+/* styles.css */
+.container-custom {
+  /* Ваши стили контейнера */
+  max-width: 850px;
+  margin-right: auto;
+  margin-left: auto; /* Пример внутренних отступов */
+}

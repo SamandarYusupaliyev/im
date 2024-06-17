@@ -8,12 +8,13 @@ import {
 import MainLayout from "./layout/MainLayout";
 
 //pages
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Create from "./pages/Create";
-import RecipeDetail from "./pages/RecipeDetail";
-import Chart from "./pages/Chart";
+import Home from './page/Home'
+import Login from "./page/Login";
+import Register from "./page/Register";
+import Create from "./page/Create";
+import RecipeDetail from "./page/RecipeDetail";
+import Chart from "./page/Chart";
+import Cart from './page/Cart'
 
 //components
 import Error from "./components/Error";
@@ -55,6 +56,10 @@ function App() {
         {
           path: "/chart",
           element: <Chart />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
         },
       ],
     },

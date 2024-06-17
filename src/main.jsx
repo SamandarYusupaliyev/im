@@ -4,7 +4,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import toast, { Toaster } from "react-hot-toast";
-import ErrorBoundary from "./pages/ErrorBoundery.jsx";
+import ErrorBoundery from './page/ErrorBoundery.jsx'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
