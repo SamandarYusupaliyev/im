@@ -1,89 +1,100 @@
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter,RouterProvider,Navigate} from 'react-router-dom'
 
-//layouts
-import MainLayout from "./layout/MainLayout";
+// Layout
+import MainLayout from "./Layout/MainLayout"
 
-//pages
-import Home from './page/Home'
-import Login from "./page/Login";
-import Register from "./page/Register";
-import Create from "./page/Create";
-import RecipeDetail from "./page/RecipeDetail";
-import Chart from "./page/Chart";
-import Cart from './page/Cart'
+// pgeas
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import  Signin from "./pages/Signin"
+import Signup from "./pages/Signup"
+import Create from "./pages/Create"
+import SingleRecipie from './pages/SingleRecipe'
 
-//components
-import Error from "./components/Error";
-import ProtectedRoutes from "./components/ProtectedRoutes";
+// components
+import ProtectedRotes from './components/ProtectedRotes'
+import Navbar from './components/Navbar'
 
-// redux
-import { useSelector, useDispatch } from "react-redux";
-import { login } from "./features/userSlice";
-import { useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/firebaseConfig";
-import { isAuthReady } from "./features/userSlice";
+//context
+import { useContext, useEffect } from 'react'
+import { GlobalContext } from './context/useGlobalContext'
 
-function App() {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.currentUser);
-  const routes = createBrowserRouter([
+
+// firebase
+import { auth } from './firebase/firebaseConfig'
+import { onAuthStateChanged } from 'firebase/auth'
+
+// action
+import { action as signupAction } from './pages/Signup'
+import { action as signinAction } from './pages/Signin'
+import { action as createAction } from './pages/Create'
+import SingleRecipe from './pages/SingleRecipe'
+
+// loader
+import {loader as singleRecipieLoader} from './pages/SingleRecipe'
+
+
+function App(){
+  const {user,dispatch,authChange}=useContext(GlobalContext)
+  const routes =createBrowserRouter([
     {
-      path: "/",
-      element: (
-        <ProtectedRoutes user={user}>
-          <MainLayout />
-        </ProtectedRoutes>
-      ),
-      // errorElement: <Error />,
-      children: [
+      path:"/",
+       element:(
+       <ProtectedRotes user={user}>
+         <MainLayout/>
+       </ProtectedRotes>),
+      children:[
         {
-          index: true,
-          element: <Home />,
+          index:true,
+          element :<Home/>
         },
         {
-          path: "/create",
-          element: <Create />,
+          path:'/about',
+          element:<About/>,
         },
         {
-          path: "/recipe/:id",
-          element: <RecipeDetail />,
+          path:'/contact',
+          element:<Contact/>,
         },
         {
-          path: "/chart",
-          element: <Chart />,
+          path:'/create',
+          element: <Create/>,
+          action:createAction,
         },
         {
-          path: "/cart",
-          element: <Cart />,
-        },
-      ],
+          path:"/singleRecipie/:id",
+          element:<SingleRecipie/>,
+          loader:singleRecipieLoader,
+        }
+      ]
     },
     {
-      path: "/login",
-      element: user ? <Navigate to="/" /> : <Login />,
+      path:"/signin",
+      element:user ? <Navigate to="/" />:<Signin/>,
+      action:signinAction,
     },
     {
-      path: "/register",
-      element: user ? <Navigate to="/" /> : <Register />,
+      path:"/signup",
+      element:user ? <Navigate to="/" />:<Signup/>,
+      action:signupAction,
     },
-  ]);
-
-  useEffect(() => {
+  ])
+ 
+  useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const uid = user.uid;
-        dispatch(login(user));
-        dispatch(isAuthReady());
-      }
-    });
-  }, [user]);
+  dispatch({
+    type:"SIGN_IN",
+    payload:user,
+  });
+  dispatch({
+    type:"AUTH_CHANGE",
+  })
+})
+},[])
 
-  return <>{<RouterProvider router={routes} />}</>;
+  return <>{authChange && <RouterProvider router={routes}/>}</>
 }
 
-export default App;
+export default App
+
