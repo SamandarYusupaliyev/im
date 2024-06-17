@@ -53,6 +53,24 @@
       ],
       "cookingTime": "60 minutes",
       "method": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vel nihil tenetur rerum eos architecto delectus suscipit adipisci aut ut porro consequatur ipsum error voluptate facere sequi dicta, at sit nobis inventore sapiente placeat possimus! Id, libero. Ullam et architecto facilis magnam nobis odit repellat quam, impedit veniam tempore. Sapiente!"
+    },
+    {
+      "id": "4",
+      "title": "Sho'rva",
+      "image": "https://img1.russianfood.com/dycontent/images_upl/362/big_361362.jpg",
+      "ingredients": [
+        "sabzi",
+        "go'sht",
+        "yog'",
+        "piyoz",
+        "kartoshka",
+        "tuz",
+        "suv",
+        "bolgarskiy-qalampir",
+        "pomidor"
+      ],
+      "cookingTime": "60 minutes",
+      "method": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vel nihil tenetur rerum eos architecto delectus suscipit adipisci aut ut porro consequatur ipsum error voluptate facere sequi dicta, at sit nobis inventore sapiente placeat possimus! Id, libero. Ullam et architecto facilis magnam nobis odit repellat quam, impedit veniam tempore. Sapiente!"
     }
   ]
 }
