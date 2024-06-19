@@ -25,7 +25,7 @@ function SingleRecipe() {
     {data && (
       <div>
         <h1  className="text-3xl mb-4 font-bold">{data.title}</h1>
-        <img className="w-full h-80 object-cover rounded-xl mb-5 bg-white object-center" src={data.image} alt="" />
+        <img className="w-full h-96 object-cover rounded-xl mb-5 bg-white object-center" src={data.image} alt="" />
          <div className="flex gap-4 items-center mb-4">
           <h2 className="text-xl font-bold items-center">Ingredients:</h2>
             <button type="submit" className="btn">tuz</button>
