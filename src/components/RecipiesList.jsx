@@ -26,8 +26,14 @@ function RecipiesList({recipies}) {
         <p className="line-clamp-3 mb-2">{recipie.method}</p>
        <div className="card-actions flex-nowrap items-center">
       <Link  to={`/singleRecipie/${recipie.id}`} className="btn btn-primary w-20 font-bold ">More</Link>
-       <button onClick={()=>deleteRecipie(recipie.id)} className="btn btn-secondary">
+       {/* <button onClick={()=>deleteRecipie(recipie.id)} className="btn btn-secondary">
         <IoTrashOutline/>
+        </button> */}
+        <button
+          className="btn btn-secondary"
+          onClick={() => handleDelete(recipie.id)}
+          >
+          <IoTrashOutline/>
         </button>
       </div>
       </div>

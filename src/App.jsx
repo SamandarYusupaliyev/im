@@ -10,6 +10,7 @@ import  Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Create from "./pages/Create"
 import SingleRecipie from './pages/SingleRecipe'
+// import Contact from './page/Contact'
 
 // components
 import ProtectedRotes from './components/ProtectedRotes'
