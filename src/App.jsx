@@ -10,7 +10,7 @@ import  Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Create from "./pages/Create"
 import SingleRecipie from './pages/SingleRecipe'
-// import Contact from './page/Contact'
+import Contact from './pages/Contact'
 
 // components
 import ProtectedRotes from './components/ProtectedRotes'
@@ -52,6 +52,10 @@ function App(){
         {
           path:'/about',
           element:<About/>,
+        },
+        {
+          path:'/contact',
+          element:<Contact/>,
         },
         {
           path:'/create',
