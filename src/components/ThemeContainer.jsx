@@ -54,7 +54,9 @@ function ThemeContainer() {
         {/* theme */}
          <div>
          <div className="dropdown dropdown-end">
-              <Link to='cart'><TiShoppingCart className="w-6 h-6"/></Link>
+          <Link to='cart'>
+           <TiShoppingCart className="w-6 h-6"/>
+          </Link>
              
               
             </div>
