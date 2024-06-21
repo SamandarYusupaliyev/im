@@ -11,6 +11,7 @@ import Signup from "./pages/Signup"
 import Create from "./pages/Create"
 import SingleRecipie from './pages/SingleRecipe'
 import Contact from './pages/Contact'
+import Cart from "./pages/Cart"
 
 // components
 import ProtectedRotes from './components/ProtectedRotes'
@@ -56,6 +57,10 @@ function App(){
         {
           path:'/contact',
           element:<Contact/>,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
         },
         {
           path:'/create',
