@@ -29,7 +29,7 @@ function RecipiesList({recipies}) {
        {/* <button onClick={()=>deleteRecipie(recipie.id)} className="btn btn-secondary">
         <IoTrashOutline/>
         </button> */}
-        <button
+        <button 
           className="btn btn-secondary"
           onClick={() => handleDelete(recipie.id)}
           >
