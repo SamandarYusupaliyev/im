@@ -1,7 +1,7 @@
 import { createBrowserRouter,RouterProvider,Navigate} from 'react-router-dom'
 
 // Layout
-import MainLayout from "./Layout/MainLayout"
+import MainLayout from "./layout/MainLayout"
 
 // pgeas
 import Home from "./pages/Home"
